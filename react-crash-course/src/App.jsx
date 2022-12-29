@@ -12,7 +12,7 @@ function App() {
       <Todo title="Land a $100k job" paragraph="Finish every interview question and apply to 100 jobs "/>
       <Todo title ="The Real World " paragraph="Just enjoy the results" />
       </div>
-      {/* <Modal></Modal> */}
+      <Modal question="Are you sure?" />
     </>
   );
 }

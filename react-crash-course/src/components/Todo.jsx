@@ -1,5 +1,6 @@
 import './Todo.css'
 
+
 function Todo({title, paragraph}) {
     return (
         <div className="todo">

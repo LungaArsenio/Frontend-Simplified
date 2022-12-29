@@ -12,3 +12,4 @@ function Todo({title, paragraph}) {
 }
 
 export default Todo
+

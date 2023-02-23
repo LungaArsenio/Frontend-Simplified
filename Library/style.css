@@ -418,7 +418,11 @@ footer {
     .nav__links {
         display:none;
     }
-    
+
+    .header__description h1 {
+        font-size: 30px;
+    }
+
     .btn__menu {
         display: block;
     }

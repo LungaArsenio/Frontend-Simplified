@@ -176,7 +176,7 @@ button:active {
 }
 
 
-/* 
+/*
 
 LANDING
 
@@ -209,7 +209,7 @@ header {
 .header__img--wrapper {
   padding: 20px;
 
-  /* Added this after the tutorial to 
+  /* Added this after the tutorial to
   show it over the wave on larger screens */
   z-index: 50;
 }
@@ -233,9 +233,9 @@ header {
 .no-cursor {
   cursor: not-allowed;
 }
-/* 
+/*
 
-HIGHLIGHTS 
+HIGHLIGHTS
 
 */
 
@@ -304,9 +304,9 @@ HIGHLIGHTS
   text-align: center;
 }
 
-/* 
+/*
 
-FEATURES 
+FEATURES
 
 */
 
@@ -370,7 +370,7 @@ FEATURES
   color: #bfbfbf;
 }
 
-/* 
+/*
 
 EXPLORE
 
@@ -380,7 +380,7 @@ EXPLORE
   background-color: rgba(115, 66, 214, 0.1);
 }
 
-/* 
+/*
 
 FOOTER
 
@@ -412,7 +412,7 @@ footer {
   padding: 0 8px;
 }
 
-/* 
+/*
 **
 
 BOOKS PAGE
@@ -515,6 +515,11 @@ select {
 @media (max-width: 550px) {
   .btn__menu {
     display: block;
+  }
+
+  .books__header {
+    flex-direction: column;
+    gap: 12px;
   }
 
   .nav__links {

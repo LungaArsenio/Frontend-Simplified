@@ -240,7 +240,7 @@ header {
 
 #highlights:before,
 #highlights:after {
-    background: url("Assets/wave.svg");
+    background: url("/assets/wave.svg");
     content: "";
     position: absolute;
     width: 101vw;

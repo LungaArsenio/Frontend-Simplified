@@ -167,7 +167,7 @@ function getBooks() {
           rating: 4.5,
         },
       ])
-    }, 1000);
+    }, 2000);
   });
 
 }

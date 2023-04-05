@@ -5,22 +5,23 @@ let books;
 async function renderBooks(filter) {
   const booksWrapper = document.querySelector('.books');
 
-  booksWrapper.classList += ' books__loading'
-  if(!books){ // while books doesn't exist it will await
-    books = await getBooks();// we need to await because gB() it is returning a promise.
+  booksWrapper.classList += ' books__loading';
+
+  if (!books) { // while books doesn't exist it will await
+    books = await getBooks();// we need to await because getBooks() it is returning a promise.
   }
   booksWrapper.classList.remove('books__loading')
 
   if (filter === 'LOW_TO_HIGH') {
     books.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice));
-  // using the OR operator it takes the 1st value and if the 1st doesn't exis take takes the 2nd
+    // using the OR operator it takes the 1st value and if the 1st doesn't exis take takes the 2nd
   } else if (filter === "HIGH_TO_LOW") {
-    books.sort( (a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
+    books.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
   } else if (filter === "RATING") {
-    books.sort( (a, b) => b.rating - a.rating);
+    books.sort((a, b) => b.rating - a.rating);
   }
 
-    // map doesn´t change the actual array it creates a new one with the changes made.
+  // map doesn´t change the actual array it creates a new one with the changes made.
   const booksHtml = books.map((book) => {
     // in this case "book" means every object in getBooks()
     // Cuz we're using map it will be looping every single component of getBooks().
@@ -50,25 +51,25 @@ function priceHTML(originalPrice, salePrice) {
   return `<span class="book__price--normal"> $${originalPrice.toFixed(2)} </span> $${salePrice.toFixed(2)}`
 }
 
-function ratingsHTML (rating) {
+function ratingsHTML(rating) {
   let ratingHtml = "";
 
-  for(let i = 0 ; i < Math.floor(rating); i++) {
+  for (let i = 0; i < Math.floor(rating); i++) {
     ratingHtml += '<i class="fas fa-star"></i>';
   }
-  if( !Number.isInteger(rating)) {
+  if (!Number.isInteger(rating)) {
     ratingHtml += '<i class="fas fa-star-half-alt"></i>'
   }
 
   return ratingHtml;
 }
 
-function filterBooks (event) {
-    renderBooks(event.target.value);
-  }
+function filterBooks(event) {
+  renderBooks(event.target.value);
+}
 
 setTimeout(() => {
-   renderBooks();
+  renderBooks();
   //When we set a setTimeout function with 0ms his function will
   // be placed in a queue to run as soon as possible, but the function wont run right away.
 });

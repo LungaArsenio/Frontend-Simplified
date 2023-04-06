@@ -1,15 +1,13 @@
 import './Todo.css'
 
+function Todo({ title, deleteConf }) {
 
-function Todo({title, paragraph}) {
     return (
         <div className="todo">
-            <h2> { title } </h2>
-            <p> { paragraph } </p>
-            <button>Delete</button>
+            <p> { title } </p>
+        <button onClick={ deleteConf }>Delete</button>
         </div>
     )
 }
 
 export default Todo
-
